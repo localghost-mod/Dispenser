@@ -40,7 +40,11 @@ namespace Dispenser
             );
             harmony.Patch(
                 Method(
+#if v1_4
                     "RimWorld.FoodUtility+<>c__DisplayClass19_0:<BestFoodSourceOnMap_NewTemp>b__0"
+#else
+                    "RimWorld.FoodUtility+<>c__DisplayClass14_0:<BestFoodSourceOnMap>b__0"
+#endif
                 ),
                 transpiler: foodUtilityTranspiler
             );
